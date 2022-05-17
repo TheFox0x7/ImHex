@@ -89,19 +89,19 @@ jobs:
         mingw32-make -j4 install
         cpack
 
-    - name: ⬆️ Upload Portable ZIP
-      uses: actions/upload-artifact@v2
-      with:
-        name: Windows Portable ZIP
-        path: |
-          build/install/*
+#     - name: ⬆️ Upload Portable ZIP
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: Windows Portable ZIP
+#         path: |
+#           build/install/*
 
-    - name: ⬆️ Upload Windows Installer
-      uses: actions/upload-artifact@v2
-      with:
-        name: Windows Installer
-        path: |
-          build/*.msi
+#     - name: ⬆️ Upload Windows Installer
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: Windows Installer
+#         path: |
+#           build/*.msi
 
   # MacOS build
   macos:
@@ -144,11 +144,11 @@ jobs:
           ..
         make -j4 package
 
-    - name: ⬆️ Upload DMG
-      uses: actions/upload-artifact@v2
-      with:
-        name: macOS DMG
-        path: build/*.dmg
+#     - name: ⬆️ Upload DMG
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: macOS DMG
+#         path: build/*.dmg
 
   # Linux build
   linux:
@@ -217,12 +217,12 @@ jobs:
       #    flatpak-builder --jobs=4 --repo=imhex _flatpak dist/net.werwolv.ImHex.yaml --ccache --keep-build-dirs
       #    flatpak build-bundle imhex imhex.flatpak net.werwolv.ImHex stable
 
-      - name: ⬆️ Upload ELF
-        uses: actions/upload-artifact@v2
-        with:
-          name: Linux ELF
-          path: |
-            build/AppDir/*
+#       - name: ⬆️ Upload ELF
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: Linux ELF
+#           path: |
+#             build/AppDir/*
 
       - name: 📦 Bundle DEB
         run: |
@@ -245,17 +245,17 @@ jobs:
       #    path: |
       #      imhex.flatpak
 
-      - name: ⬆️ Upload DEB
-        uses: actions/upload-artifact@v2
-        with:
-          name: Linux DEB
-          path: |
-            imhex.deb
+#       - name: ⬆️ Upload DEB
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: Linux DEB
+#           path: |
+#             imhex.deb
 
-      - name: ⬆️ Upload AppImage
-        uses: actions/upload-artifact@v2
-        with:
-          name: Linux AppImage
-          path: |
-            imhex.AppImage
+#       - name: ⬆️ Upload AppImage
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: Linux AppImage
+#           path: |
+#             imhex.AppImage
 
