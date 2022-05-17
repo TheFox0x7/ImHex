@@ -152,8 +152,11 @@ jobs:
 
   # Linux build
   linux:
-    runs-on: [ubuntu-20.04,ubuntu-22.04]
-    name: 🐧 Ubuntu 20.04
+    strategy:
+      matrix:
+        os: [ubuntu-20.04,ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    name: 🐧 ${{ matrix.os }}
     steps:
 
       - name: 🧰 Checkout
